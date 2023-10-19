@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:redi_express/pages/sign_up.dart';
 
 class OnBoard extends StatelessWidget {
   const OnBoard({Key? key}) : super(key: key);
@@ -71,8 +72,8 @@ class _CarouselState extends State<Carousel> {
           Spacer(),
           activePage != 2
               ? Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 40),
-                child: Row(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 40),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
@@ -81,7 +82,14 @@ class _CarouselState extends State<Carousel> {
                           height: 30,
                           width: 55,
                           child: GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Sign_up(),
+                                ),
+                              );
+                            },
                             child: Container(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(5),
@@ -109,7 +117,14 @@ class _CarouselState extends State<Carousel> {
                           height: 30,
                           width: 55,
                           child: GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Sign_up(),
+                                ),
+                              );
+                            },
                             child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5),
@@ -129,7 +144,7 @@ class _CarouselState extends State<Carousel> {
                       ),
                     ],
                   ),
-              )
+                )
               : Column(
                   children: [
                     Container(
@@ -138,7 +153,14 @@ class _CarouselState extends State<Carousel> {
                         width: double.infinity,
                         height: 47,
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Sign_up(),
+                              ),
+                            );
+                          },
                           child: Container(
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(4),

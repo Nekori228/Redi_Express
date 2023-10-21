@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'Home.dart';
+import 'home.dart';
 import 'new_password.dart';
 
 class AuthCodePage extends StatefulWidget {

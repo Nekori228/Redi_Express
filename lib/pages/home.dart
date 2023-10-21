@@ -92,6 +92,7 @@ class _HomeState extends State<Home> {
               horizontal: MediaQuery.of(context).size.width * 0.05),
           child: Column(
             children: [
+              SizedBox(height: 30),
               SizedBox(
                 height: 35,
                 child: TextField(
@@ -116,6 +117,7 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
+              SizedBox(height: 30),
               Container(
                 width: double.infinity,
                 height: 95,
@@ -156,6 +158,7 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
+              SizedBox(height: 30),
               Row(
                 children: [
                   Text(
@@ -169,6 +172,7 @@ class _HomeState extends State<Home> {
                   SvgPicture.asset('assets/icons/arrow.svg')
                 ],
               ),
+              SizedBox(height: 10),
               Row(
                 children: [
                   Container(
@@ -186,14 +190,12 @@ class _HomeState extends State<Home> {
                       children: [
                         Container(
                           margin: EdgeInsets.fromLTRB(5, 0, 70, 0),
-                          child: Expanded(
-                            child: Text(
-                              "Tech Meetup coming soon",
-                              style: GoogleFonts.roboto(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400),
-                            ),
+                          child: Text(
+                            "Tech Meetup coming soon",
+                            style: GoogleFonts.roboto(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400),
                           ),
                         ),
                       ],
@@ -213,6 +215,7 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
+              SizedBox(height: 30),
               Row(
                 children: [
                   Text(
@@ -224,6 +227,7 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
+              SizedBox(height: 10),
               Row(
                 children: [
                   GestureDetector(
@@ -236,15 +240,28 @@ class _HomeState extends State<Home> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         color: _container1Color,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 7,
+                            offset: Offset(0, 1),
+                          ),
+                        ],
+
                       ),
                       child: Container(
                         margin: EdgeInsets.symmetric(
-                            horizontal: MediaQuery.of(context).size.width * 0.03),
+                            horizontal:
+                                MediaQuery.of(context).size.width * 0.03),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Spacer(),
-                            SvgPicture.asset('assets/icons/ima_cont1.svg', color: _SvgColor1,),
+                            SvgPicture.asset(
+                              'assets/icons/ima_cont1.svg',
+                              color: _SvgColor1,
+                            ),
                             SizedBox(height: 10),
                             Text(
                               'Customer Care',
@@ -253,14 +270,12 @@ class _HomeState extends State<Home> {
                                   fontSize: 18,
                                   fontWeight: FontWeight.w800),
                             ),
-                            Expanded(
-                              child: Text(
-                                'Our customer care service line is available from 8 -9pm week days and 9 - 5 weekends - tap to call us today',
-                                style: GoogleFonts.roboto(
-                                    color: _smalltextColor1,
-                                    fontSize: 8,
-                                    fontWeight: FontWeight.w400),
-                              ),
+                            Text(
+                              'Our customer care service line is available from 8 -9pm week days and 9 - 5 weekends - tap to call us today',
+                              style: GoogleFonts.roboto(
+                                  color: _smalltextColor1,
+                                  fontSize: 8,
+                                  fontWeight: FontWeight.w400),
                             ),
                             Spacer(),
                           ],
@@ -279,33 +294,51 @@ class _HomeState extends State<Home> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         color: _container2Color,
-                      ),
-                      padding: EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Send a package',
-                            style: GoogleFonts.roboto(
-                                color: _textColor2,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 7,
+                            offset: Offset(0, 1),
                           ),
-                          Expanded(
-                            child: Text(
+                        ],
+                      ),
+                      child: Container(
+                        margin: EdgeInsets.symmetric(
+                            horizontal:
+                                MediaQuery.of(context).size.width * 0.03),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Spacer(),
+                            SvgPicture.asset(
+                              'assets/icons/ima_cont2.svg',
+                              color: _SvgColor2,
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              'Send a package',
+                              style: GoogleFonts.roboto(
+                                  color: _textColor2,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w800),
+                            ),
+                            Text(
                               'Request for a driver to pick up or deliver your package for you',
                               style: GoogleFonts.roboto(
                                   color: _smalltextColor2,
                                   fontSize: 8,
                                   fontWeight: FontWeight.w400),
                             ),
-                          ),
-                        ],
+                            Spacer(),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
+              SizedBox(height: 20),
               Row(
                 children: [
                   GestureDetector(
@@ -313,30 +346,103 @@ class _HomeState extends State<Home> {
                       _changeColor(3);
                     },
                     child: Container(
-                      color: _container3Color,
-                      padding: EdgeInsets.all(20),
-                      child: Text(
-                        'Fund your wallet',
-                        style: GoogleFonts.roboto(
-                            color: _textColor3,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600),
+                      width: 170,
+                      height: 170,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: _container3Color,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 7,
+                            offset: Offset(0, 1),
+                          ),
+                        ],
+                      ),
+                      child: Container(
+                        margin: EdgeInsets.symmetric(
+                            horizontal:
+                                MediaQuery.of(context).size.width * 0.03),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Spacer(),
+                            SvgPicture.asset(
+                              'assets/icons/ima_cont3.svg',
+                              color: _SvgColor3,
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              'Fund your wallet',
+                              style: GoogleFonts.roboto(
+                                  color: _textColor3,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w800),
+                            ),
+                            Text(
+                              'To fund your wallet is as easy as ABC, make use of our fast technology and top-up your wallet today',
+                              style: GoogleFonts.roboto(
+                                  color: _smalltextColor3,
+                                  fontSize: 8,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                            Spacer(),
+                          ],
+                        ),
                       ),
                     ),
                   ),
+                  Spacer(),
                   GestureDetector(
                     onTap: () {
                       _changeColor(4);
                     },
                     child: Container(
-                      color: _container4Color,
-                      padding: EdgeInsets.all(20),
-                      child: Text(
-                        'Book a rider',
-                        style: GoogleFonts.roboto(
-                            color: _textColor4,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600),
+                      width: 170,
+                      height: 170,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: _container4Color,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 7,
+                            offset: Offset(0, 1),
+                          ),
+                        ],
+                      ),
+                      child: Container(
+                        margin: EdgeInsets.symmetric(
+                            horizontal:
+                                MediaQuery.of(context).size.width * 0.03),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Spacer(),
+                            SvgPicture.asset(
+                              'assets/icons/ima_cont4.svg',
+                              color: _SvgColor4,
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              'Book a rider',
+                              style: GoogleFonts.roboto(
+                                  color: _textColor4,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w800),
+                            ),
+                            Text(
+                              'Search for available rider within your area',
+                              style: GoogleFonts.roboto(
+                                  color: _smalltextColor4,
+                                  fontSize: 8,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                            Spacer(),
+                          ],
+                        ),
                       ),
                     ),
                   ),
